@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    font-size: 1.5em;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+}
+
+.container {
+    display: flex;
+    margin-top: 60px;
+    min-height: 100vh;
+}
+
+.left-menu {
+    width: 20%;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    display: block;
+    transition: width 0.3s;
+}
+
+.left-menu ul {
+    list-style-type: none;
+}
+
+.left-menu ul li {
+    margin: 10px 0;
+}
+
+.left-menu ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.right-panel {
+    width: 25%;
+    padding: 20px;
+    background-color: #e1e1e1;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Collapsible Menu Styles */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .left-menu {
+        width: 0;
+        display: none;
+        transition: width 0.3s;
+    }
+
+    .left-menu.open {
+        display: block;
+        width: 200px;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .right-panel {
+        width: 100%;
+    }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1600px) and (min-width: 992px) {
+    body {
+        transform: scale(0.9);
+        transform-origin: top;
+    }
+}
+
+@media screen and (max-width: 767px) and (min-width: 700px) {
+    body {
+        transform: scale(0.8);
+        transform-origin: top;
+    }
+}
+
+@media screen and (max-width: 700px) and (min-width: 600px) {
+    body {
+        transform: scale(0.75);
+        transform-origin: top;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        transform: scale(0.5);
+        transform-origin: top;
+    }
+}
